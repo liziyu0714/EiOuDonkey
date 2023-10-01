@@ -5,6 +5,7 @@ using JiebaNet;
 using JiebaNet.Segmenter;
 using JiebaNet.Segmenter.PosSeg;
 using static EiOuDonkey.Program;
+using static EiOuDonkey.TextColors;
 
 namespace EiOuDonkey
 {

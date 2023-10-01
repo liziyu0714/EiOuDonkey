@@ -6,15 +6,13 @@ using JiebaNet.Segmenter;
 using JiebaNet.Segmenter.PosSeg;
 using EiOuDonkey;
 using static EiOuDonkey.Program;
+using static EiOuDonkey.TextColors;
 
 namespace EiOuDonkey
 {
     public static class Program
     {
-        public const string Red = "\x1B[31m";
-        public const string Yellow = "\x1B[33m";
-        public const string Green = "\x1B[32m";
-        public const string RESET = "\x1B[0m";
+        
         public static bool change_all = false;
         public static bool use_color = false;
         public static bool ingore_overwrite = false;
@@ -24,6 +22,7 @@ namespace EiOuDonkey
         public static Random random = new Random();
 
         public static string orignal_string = "";
+        public static string rendered_string = "";
         public static string result_string = "";
 
         public static int Main(string[] Args)
@@ -41,11 +40,13 @@ namespace EiOuDonkey
 
             orignal_string = input;
 
-            input.Replace("，", "");
-            input.Replace("。", "");
-            input.Replace("；", "");
-            input.Replace(",", "");
-            input.Replace(".", "");
+            input = input.Replace("，", "");
+            input = input.Replace("。", "");
+            input = input.Replace("；", "");
+            input = input.Replace(",", "");
+            input = input.Replace(".", "");
+
+            rendered_string = input;
 
             var poscut = new PosSegmenter();
             var result = poscut.Cut(input);

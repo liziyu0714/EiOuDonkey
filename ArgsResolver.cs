@@ -5,6 +5,7 @@ using JiebaNet;
 using JiebaNet.Segmenter;
 using JiebaNet.Segmenter.PosSeg;
 using static EiOuDonkey.Program;
+using static EiOuDonkey.TextColors;
 
 namespace EiOuDonkey
 {
@@ -41,7 +42,7 @@ namespace EiOuDonkey
                     }
                 else if (t != "" && t[0] == '-' && t[1] == '-')
                 {
-                    switch (t.Substring(2))
+                    switch (t[2..])
                     {
                         case "all":
                             change_all = true;
